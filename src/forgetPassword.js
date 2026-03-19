@@ -10,7 +10,7 @@ export default function PasswordChanger(){
             alert("UserName or Password Must Not Be Empty")
             return;
         }
-        const res=await fetch(`http://localhost:8080/forgetPassword?username=${userName}&password=${newPassword}`,{
+        const res=await fetch(`https://todo-backend-l770.onrender.com/forgetPassword?username=${userName}&password=${newPassword}`,{
             method:"PUT",
             headers:{
                 'Content-type':'application/json'

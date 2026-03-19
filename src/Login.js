@@ -14,7 +14,7 @@ export function LoginForm(){
         password:password
       }
       try{
-        const res=await fetch(`http://localhost:8080/login`,{
+        const res=await fetch(`https://todo-backend-l770.onrender.com/login`,{
             method:"POST",
             headers:{
                 "Content-type":"application/json"
@@ -72,7 +72,7 @@ export function RegisterForm(){
             password:password
         }
    try{
-    const res=await fetch(`http://localhost:8080/Register`,{
+    const res=await fetch(`https://todo-backend-l770.onrender.com/Register`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

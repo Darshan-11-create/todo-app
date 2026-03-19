@@ -19,7 +19,7 @@ export function AddTask() {
       customer: { id: Number(localStorage.getItem("id")) }
     };
     try {
-      await fetch(`http://localhost:8080/addTask`, {
+      await fetch(`https://todo-backend-l770.onrender.com/addTask`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(Task)
@@ -62,7 +62,7 @@ function Home() {
 
   async function taskFetcher() {
     try {
-      const res = await fetch(`http://localhost:8080/allTasks?id=${localStorage.getItem("id")}`);
+      const res = await fetch(`https://todo-backend-l770.onrender.com/allTasks?id=${localStorage.getItem("id")}`);
       if (res.ok) 
       {
         const today=new Date();
@@ -89,7 +89,7 @@ function Home() {
 }
   async function taskremover(id) {
     try {
-      await fetch(`http://localhost:8080/removeTask?task_id=${id}`, { method: "DELETE" });
+      await fetch(`https://todo-backend-l770.onrender.com/removeTask?task_id=${id}`, { method: "DELETE" });
       taskFetcher();
     } catch (err) {
       console.log(err);
