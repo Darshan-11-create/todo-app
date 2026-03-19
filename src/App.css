@@ -1,18 +1,310 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Outfit:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #08091a;
+  color: #e8d9b0;
+  min-height: 100vh;
+}
+
+/* ── Welcome page ─────────────────────────────────── */
+.welcome-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 30%, rgba(212,175,80,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 85% 80%, rgba(30,50,120,0.35) 0%, transparent 55%),
+    linear-gradient(155deg, #08091a 0%, #0e1230 45%, #080918 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero ─────────────────────────────────────────── */
+.welcome-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 24px 80px;
+  gap: 18px;
+  position: relative;
+  min-height: calc(100vh - 64px);
+}
+
+.welcome-hero::before {
+  content: '';
+  position: absolute;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,80,0.05);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.welcome-hero::after {
+  content: '';
+  position: absolute;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,80,0.08);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
+.welcome-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(212,175,80,0.55);
+  animation: fadeUp 0.7s ease both;
+}
+
+.welcome-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 400;
+  color: #f5ead8;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+
+.welcome-hero h1 span { color: #d4af50; }
+
+.welcome-hero p {
+  font-size: clamp(14px, 2vw, 17px);
+  font-weight: 300;
+  color: rgba(200,185,145,0.5);
+  text-align: center;
+  letter-spacing: 0.03em;
+  max-width: 420px;
+  line-height: 1.7;
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+
+.welcome-divider {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4af50, transparent);
+  animation: fadeUp 1s 0.25s ease both;
+}
+
+/* ── Scroll button ────────────────────────────────── */
+.scroll-btn {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(212,175,80,0.3);
+  background: rgba(212,175,80,0.07);
+  color: rgba(212,175,80,0.8);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.25s;
+  animation: fadeUp 1s 0.35s ease both;
+}
+
+.scroll-btn:hover {
+  background: rgba(212,175,80,0.13);
+  border-color: rgba(212,175,80,0.55);
+  color: #d4af50;
+  transform: translateY(2px);
+}
+
+.scroll-arrow {
+  animation: bounce 1.6s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4px); }
+}
+
+/* ── About section ────────────────────────────────── */
+.about-section {
+  padding: 100px 24px 80px;
+  position: relative;
+}
+
+/* Top gold fade line */
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,80,0.2), transparent);
+}
+
+.about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 400;
+  color: #f5ead8;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.about-intro {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(200,185,145,0.55);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* ── Cards ────────────────────────────────────────── */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.about-card {
+  background: rgba(14,18,48,0.6);
+  border: 1px solid rgba(212,175,80,0.12);
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,80,0.25), transparent);
+}
+
+.about-card:hover {
+  border-color: rgba(212,175,80,0.28);
+  transform: translateY(-4px);
+}
+
+.about-card-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.about-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #f0e8d5;
+  letter-spacing: 0.01em;
+}
+
+.about-card p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(200,185,145,0.45);
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* ── Stats ────────────────────────────────────────── */
+.about-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: rgba(14,18,48,0.5);
+  border: 1px solid rgba(212,175,80,0.1);
+  border-radius: 20px;
+  padding: 32px 40px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0 48px;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #d4af50;
+  letter-spacing: 0.02em;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(200,185,145,0.4);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(212,175,80,0.15);
+}
+
+/* ── Footer ───────────────────────────────────────── */
+.welcome-footer {
+  text-align: center;
+  padding: 28px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(200,185,145,0.25);
+  border-top: 1px solid rgba(212,175,80,0.07);
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── CRA leftovers ───────────────────────────────── */
+.App { text-align: center; }
+.App-logo { height: 40vmin; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo { animation: App-logo-spin infinite 20s linear; }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,16 +315,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
+.App-link { color: #61dafb; }
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
