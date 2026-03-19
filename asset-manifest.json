@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Darshan-11-create/todo-app.git/static/css/main.67e0ec86.css",
+    "main.js": "/Darshan-11-create/todo-app.git/static/js/main.131315fc.js",
+    "static/js/453.20359781.chunk.js": "/Darshan-11-create/todo-app.git/static/js/453.20359781.chunk.js",
+    "index.html": "/Darshan-11-create/todo-app.git/index.html",
+    "main.67e0ec86.css.map": "/Darshan-11-create/todo-app.git/static/css/main.67e0ec86.css.map",
+    "main.131315fc.js.map": "/Darshan-11-create/todo-app.git/static/js/main.131315fc.js.map",
+    "453.20359781.chunk.js.map": "/Darshan-11-create/todo-app.git/static/js/453.20359781.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67e0ec86.css",
+    "static/js/main.131315fc.js"
+  ]
+}
