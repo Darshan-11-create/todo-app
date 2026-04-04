@@ -44,7 +44,7 @@ export function AddTask() {
           value={date} onChange={(e) => setDate(e.target.value)} />
 
         <label className="form-label">Gap For Notifications</label>
-        <input type="time" className="form-inputs"
+        <input type="number" className="form-inputs" placeholder="Enter Gap For Notifications in Minutes"
           value={gapForNoti} onChange={(e) => setGapForNoti(e.target.value)} />
 
         <label className="form-label">When To Start Notifications</label>
