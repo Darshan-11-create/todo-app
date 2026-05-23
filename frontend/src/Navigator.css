@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap');
+
+.Navigator {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    align-items: center;
+}
+
+.Navigator li {
+    position: relative;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: rgba(232, 217, 176, 0.7);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Underline accent */
+.Navigator li::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af50, transparent);
+    transition: transform 0.3s ease;
+}
+
+.Navigator li:hover {
+    color: #e8d9b0;
+    background: rgba(212, 175, 80, 0.08);
+    border-color: rgba(212, 175, 80, 0.22);
+    transform: translateY(-1px);
+    z-index: 50;
+}
+
+.Navigator li:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.Navigator li:active {
+    transform: translateY(0px);
+    background: rgba(212, 175, 80, 0.12);
+}
+
+/* Active / selected state */
+.Navigator li.active {
+    color: #d4af50;
+    background: rgba(212, 175, 80, 0.1);
+    border-color: rgba(212, 175, 80, 0.3);
+}
+
+.Navigator li.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
